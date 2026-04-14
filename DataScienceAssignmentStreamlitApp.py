@@ -138,9 +138,9 @@ with tab1:
         # ─── Team ────────────────────────────────
     st.subheader("Team Members")
     st.write("""
-    - Student 1  
-    - Student 2  
-    - Student 3  
+    - Eu Deck yang
+    - Lim Fang Ye
+    - Muhd Zamani Shah
         """)
 
     # ─── Executive Summary ─────────────────────
