@@ -134,92 +134,96 @@ tab1, tab2, tab3 = st.tabs(["📌 Overview", "📊 Insights", "🔮 Prediction"]
 # ─── TAB 1: Overview ─────────────────────────────────────
 with tab1:
     st.title("Project Overview")
+    col1, col2 = st.columns(2)
 
+    with col1:
         # ─── Team ────────────────────────────────
-    st.subheader("Team Members")
-    st.write("""
-    - Eu Deck yang
-    - Lim Fang Ye
-    - Muhd Zamani Shah
-        """)
+        st.subheader("Team Members")
+        st.write("""
+        - Eu Deck Yang
+        - Lim Fang Ye
+        - Muhd Zamani Shah
+            """)
 
-    # ─── Executive Summary ─────────────────────
-    st.subheader("Executive Summary")
-    st.write("""
-This project develops a machine learning model to predict obesity levels using demographic, dietary, and lifestyle data. 
+                    # ─── Business Problem ─────────────────────
+        st.subheader("Business Problem")
+        st.write("""
+        - Current obesity detection is **reactive**, based on BMI and visual checks  
+        - High obesity rates in Malaysia require **early intervention tools**  
+        - Lack of predictive systems prevents proactive healthcare planning  
+            """)
+        
+                # ─── Objectives ───────────────────────────
+        st.subheader("Project Objectives")
+        st.write("""
+        - Develop a model to predict obesity levels using lifestyle and health data  
+        - Identify key factors contributing to obesity  
+        - Compare multiple machine learning models  
+        - Achieve **>90% prediction accuracy**  
+            """)
 
-Current methods used by KKM rely on BMI and visual assessment, which only identify obesity after it has developed. 
-This model enables early prediction of obesity risk, allowing preventive intervention.
+    with col2:
+                # ─── Executive Summary ─────────────────────
+        st.subheader("Executive Summary")
+        st.write("""
+        This project develops a machine learning model to predict obesity levels using demographic, dietary, and lifestyle data. 
 
-The Random Forest model achieved the highest performance with **98.35% accuracy**, significantly outperforming other models.
-Key predictors include BMI, weight, age, family history, and physical activity.
+        Current methods used by KKM rely on BMI and visual assessment, which only identify obesity after it has developed. 
+        This model enables early prediction of obesity risk, allowing preventive intervention.
 
-The system supports early detection, personalized recommendations, and reduction of long-term healthcare costs.
-    """)
+        The Random Forest model achieved the highest performance with **98.35% accuracy**, significantly outperforming other models.
+        Key predictors include BMI, weight, age, family history, and physical activity.
 
-    # ─── Business Problem ─────────────────────
-    st.subheader("Business Problem")
-    st.write("""
-- Current obesity detection is **reactive**, based on BMI and visual checks  
-- High obesity rates in Malaysia require **early intervention tools**  
-- Lack of predictive systems prevents proactive healthcare planning  
-    """)
-
-    # ─── Objectives ───────────────────────────
-    st.subheader("Project Objectives")
-    st.write("""
-- Develop a model to predict obesity levels using lifestyle and health data  
-- Identify key factors contributing to obesity  
-- Compare multiple machine learning models  
-- Achieve **>90% prediction accuracy**  
-    """)
+        The system supports early detection, personalized recommendations, and reduction of long-term healthcare costs.
+            """)
 
     st.divider()
 
     with st.expander("Final Summary & Conclusion"):
-        
-        st.markdown("### Summary of Findings")
-        st.write("""
-        - Successfully developed ML models to predict obesity levels  
-        - **Best model:** Random Forest (98.35% accuracy)  
-        - Key predictors: **Weight, Age, BMI, Family History, FAVC**  
-        - Achieved ~20% performance improvement over baseline  
-        - Lifestyle factors (diet, activity) are strong predictors  
-        """)
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("### Summary of Findings")
+            st.write("""
+            - Successfully developed ML models to predict obesity levels  
+            - **Best model:** Random Forest (98.35% accuracy)  
+            - Key predictors: **Weight, Age, BMI, Family History, FAVC**  
+            - Achieved ~20% performance improvement over baseline  
+            - Lifestyle factors (diet, activity) are strong predictors  
+            """)
 
-        st.markdown("### Business Impact")
-        st.write("""
-        - Enables **early obesity risk detection** for preventive intervention  
-        - Supports **data-driven decision making** for healthcare providers  
-        - Allows **personalized treatment strategies** based on lifestyle factors  
-        - Improves operational efficiency through automated risk assessment  
-        """)
+            st.markdown("### Business Impact")
+            st.write("""
+            - Enables **early obesity risk detection** for preventive intervention  
+            - Supports **data-driven decision making** for healthcare providers  
+            - Allows **personalized treatment strategies** based on lifestyle factors  
+            - Improves operational efficiency through automated risk assessment  
+            """)
 
-        st.markdown("### Limitations")
-        st.write("""
-        - Based on **self-reported data**, which may introduce bias  
-        - **Cross-sectional dataset** → cannot track changes over time  
-        - Missing key variables (e.g., socioeconomic, environmental factors)  
-        - Limited generalizability due to dataset scope  
-        """)
+            st.markdown("### Limitations")
+            st.write("""
+            - Based on **self-reported data**, which may introduce bias  
+            - **Cross-sectional dataset** → cannot track changes over time  
+            - Missing key variables (e.g., socioeconomic, environmental factors)  
+            - Limited generalizability due to dataset scope  
+            """)
+        with col2:
+            st.markdown("### Future Improvements")
+            st.write("""
+            - Use **longitudinal data** to track obesity progression  
+            - Include **environmental and socioeconomic variables**  
+            - Explore advanced models (e.g., deep learning, gradient boosting)  
+            - Apply explainability tools (e.g., SHAP) for transparency  
+            - Develop **web/mobile applications** for real-world deployment  
+            """)
 
-        st.markdown("### Future Improvements")
-        st.write("""
-        - Use **longitudinal data** to track obesity progression  
-        - Include **environmental and socioeconomic variables**  
-        - Explore advanced models (e.g., deep learning, gradient boosting)  
-        - Apply explainability tools (e.g., SHAP) for transparency  
-        - Develop **web/mobile applications** for real-world deployment  
-        """)
-
-        st.markdown("### Key Lessons Learned")
-        st.write("""
-        - Feature engineering significantly improves model performance  
-        - Ensemble models (Random Forest) handle complex data effectively  
-        - Interpretability is critical in healthcare applications  
-        - Data preprocessing (encoding, scaling) is essential for accuracy  
-        - CRISP-DM provides a strong framework for structured data projects  
-        """)
+            st.markdown("### Key Lessons Learned")
+            st.write("""
+            - Feature engineering significantly improves model performance  
+            - Ensemble models (Random Forest) handle complex data effectively  
+            - Interpretability is critical in healthcare applications  
+            - Data preprocessing (encoding, scaling) is essential for accuracy  
+            - CRISP-DM provides a strong framework for structured data projects  
+            """)
 
 # ─── TAB 2: Insights (Data Processing + Model Comparison) ─────────
 with tab2:
